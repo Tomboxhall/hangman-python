@@ -155,7 +155,9 @@ def hangman():
     the current state of the word that is being guessed, and will prompt the Player for their guesses. It handles
     the Player inputs, it tracks the guessed letters, it will check for correct guesses, updates the attempt
     count, and will determine whether the game ends due to the Player running out of attempts or by
-    successfully guessing the word correctly within the attemps allowed.
+    successfully guessing the word correctly within the attemps allowed. The Player shall also be prompted to
+    play again, they are required to choose either 'yes' or 'no', and if they enter anything other than 'yes'
+    or 'no' they will be prompted to re-enter their choice.
 
     Returns:
         None
