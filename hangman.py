@@ -105,4 +105,7 @@ def draw_hangman(attempts):
         """
     ]
 
+    return hangman_graphics[attempts - 1] if attempts > 0 else ""
+
+
 
