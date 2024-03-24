@@ -20,4 +20,16 @@ def choose_word(difficulty):
     Raises:
         ValueError: If the entry is not 'easy' or 'hard' the user will be prompted to retype.
     """
+    if difficulty == 'easy':
+        with open('easy_words.txt', 'r',) as file:
+            words = file.read().splitlines()
+    elif difficulty == 'hard':
+        with open('hard_words.txt', 'r') as file:
+            words = file.read().splitlines()
+    else:
+        raise ValueError("Incorrect entry, please enter either 'easy' or 'hard'.")
+
+    return random.choice(words)
+
+
 
