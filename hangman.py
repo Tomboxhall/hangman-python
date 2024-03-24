@@ -136,5 +136,11 @@ def hangman():
         print(draw_hangman(attempts))
         print("\nWord:", display_word(word_to_guess, guessed_letters))
         guess = input("Guess a letter: ").lower()
+
+        if guess in guessed_letters:
+            print("You have already guessed that letter. Try again.")
+            continue
+        
+        
         
 
