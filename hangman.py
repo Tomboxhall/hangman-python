@@ -167,6 +167,9 @@ def hangman():
             print("Sorry, you have ran out of attempts. The word was:", word_to_guess)
             break
         
+        if all(letter in guessed_letters for letter in word_to_guess):
+            print("Congratulations! You guessed the word:" word_to_guess)
+            break
         
         
 
