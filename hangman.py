@@ -119,5 +119,14 @@ def hangman():
                 print("Invalid word! Please enter only letters.")
                 continue
             break
+        elif player_choice == '2':
+            while True:
+                difficulty = input("Pick your difficulty level ('easy' or 'hard'): ")
+                if validate_difficulty(difficulty):
+                    word_to_guess = choose_word(difficulty)
+                    break
+                else:
+                    print("Invalid choice. Please enter '1' or '2'.")
+    
         
 
