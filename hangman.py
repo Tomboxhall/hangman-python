@@ -197,12 +197,12 @@ def hangman():
         else:
             print("\033[92mCorrect guess! Keep going.\033[0m")
         
+        if all(letter != '_' for letter in display_word(word_to_guess, guessed_letters)):
+            print("\033[92mCongratulations! You guessed the word:", word_to_guess, "\033[0m")
+            break
+
         if attempts == max_attempts:
             print("\033[91mSorry, you have ran out of attempts. The word was:", word_to_guess, "\033[0m")
-            break
-        
-        if all(letter in guessed_letters for letter in word_to_guess):
-            print("\033[92mCongratulations! You guessed the word:", word_to_guess, "\033[0m")
             break
     
     
