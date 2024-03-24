@@ -216,6 +216,7 @@ In the Hangman project, docstrings are used extensively to provide documentation
 ---
 
 ## Deployment
+### Heroku
 
 ---
 
