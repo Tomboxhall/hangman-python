@@ -146,7 +146,16 @@ def hangman():
     attempts = 0
 
     """
+    Manage the main game loop.
 
+    This section of code implements the main game loop, which will continuously display the hangman graphics,
+    the current state of the word that is being guessed, and will prompt the Player for their guesses. It handles
+    the Player inputs, it tracks the guessed letters, it will check for correct guesses, updates the attempt
+    count, and will determine whether the game ends due to the Player running out of attempts or by
+    successfully guessing the word correctly within the attemps allowed.
+
+    Returns:
+        None
     """
     while True:
         print(draw_hangman(attempts))
