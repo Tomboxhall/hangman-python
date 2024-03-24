@@ -52,4 +52,44 @@ def display_word(word, guessed_letters):
     return display.strip()
 
 
+def draw_hangman(attempts):
+    hangman_graphics = [
+        """
+        +---+
+            |
+            |
+            |
+           ===
+        """,
+        """
+        +---+
+        0   |
+            |
+            |
+           ===
+        """,
+        """
+        +---+
+        0   |
+        |   |
+            |
+           ===
+        """,
+        """
+        +---+
+        0   |
+       /|   |
+            |
+           ===
+        """,
+        """
+        +---+
+        0   |
+       /|\  |
+            |
+           ===
+        """,
+        
+    ]
+
 
