@@ -119,7 +119,6 @@ def hangman():
 
     Returns:
         None
-
     """
     print("Welcome to Hangman!")
 
@@ -137,7 +136,7 @@ def hangman():
                 difficulty = input("Pick your difficulty level ('easy' or 'hard'): ")
                 if validate_difficulty(difficulty):
                     word_to_guess = choose_word(difficulty)
-            break
+                break
         else:
             print("Invalid choice. Please enter '1' or '2'.")
             
