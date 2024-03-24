@@ -189,14 +189,14 @@ def hangman():
 
         if guess not in word_to_guess:
             attempts += 1
-            print("Incorrect guess! Attempts left:", max_attempts - attempts)
+            print("\033[91mIncorrect guess! Attempts left:", max_attempts - attempts)
         
         if attempts == max_attempts:
-            print("Sorry, you have ran out of attempts. The word was:", word_to_guess)
+            print("\033[91mSorry, you have ran out of attempts. The word was:", word_to_guess)
             break
         
         if all(letter in guessed_letters for letter in word_to_guess):
-            print("Congratulations! You guessed the word:", word_to_guess)
+            print("\033[92mCongratulations! You guessed the word:", word_to_guess)
             break
     
     while True:
