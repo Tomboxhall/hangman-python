@@ -141,6 +141,12 @@ def hangman():
             print("You have already guessed that letter. Try again.")
             continue
         
+        guessed_letters.append(guess)
+
+        if guess not in word_to_guess:
+            attempts =+ 1
+            print("Incorrect guess! Attempts left:", max_attempts - attempts)
+        
         
         
 
