@@ -131,6 +131,10 @@ def hangman():
     guessed_letters = []
     max_attempts = 7
     attempts = 0
-    
+
+    while True:
+        print(draw_hangman(attempts))
+        print("\nWord:", display_word(word_to_guess, guessed_letters))
+        guess = input("Guess a letter: ").lower()
         
 
