@@ -108,6 +108,19 @@ def draw_hangman(attempts):
     return hangman_graphics[attempts - 1] if attempts > 0 else ""
 
 def hangman():
+    """
+    Initiating the Hangman game.
+
+    This function initiates the Hangman game, prompting the player to choose between either a Player vs Player mode
+    or a Player vs Computer mode. In the Player vs Player mode, Player 1 will enter a word that needs to be
+    guessed. In Player vs Computer mode, the difficulty is chosen, and a word in randomly chosen according to 
+    the difficulty chosen. The game will continue until the word is either guessed correctly, or the 
+    Player has run out of attempts.
+
+    Returns:
+        None
+
+    """
     print("Welcome to Hangman!")
 
     while True:
@@ -147,6 +160,6 @@ def hangman():
             attempts =+ 1
             print("Incorrect guess! Attempts left:", max_attempts - attempts)
         
-        
+
         
 
