@@ -32,6 +32,16 @@ def choose_word(difficulty):
     return random.choice(words)
 
 def display_word(word, guessed_letters):
+    """
+    Generate a string that represents the display of the word with the correctly guessed letters revealed, and the unguessed letter hidden.
+
+    Args:
+        word (str): The word that needs to be guessed.
+        guessed_letters (list): A list of letter that the user has guessed.
+
+    Returns:
+        str: A string representing the word with the guessed letter revealed, and the unguessed letters hidden.
+    """
     display = ""
     for letter in word:
         if letter in guessed_letters:
