@@ -205,7 +205,6 @@ def hangman():
             print("\033[91mSorry, you have ran out of attempts. The word was:", word_to_guess, "\033[0m")
             break
     
-    
     while True:
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() == "yes":
