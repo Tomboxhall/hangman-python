@@ -1,5 +1,6 @@
 import random
 import re
+import sys
 
 def validate_word(word):
     return bool(re.match("^[a-zA-Z]+$", word))
@@ -44,6 +45,8 @@ def display_word(word, guessed_letters):
         str: A string representing the word with the guessed letter revealed, and the unguessed letters hidden.
     """
     display = ""
+    word = word.lower()
+    guessed_letters = [letter.lower() for letter in guessed_letters]
     for letter in word:
         if letter in guessed_letters:
             display += letter + " "
@@ -178,6 +181,7 @@ def hangman():
     """
     while True:
         print(draw_hangman(attempts))
+        display_word(word_to_guess, guessed_letters)
         print("\nWord:", display_word(word_to_guess, guessed_letters))
         guess = input("Guess a letter: ").lower()
 
@@ -189,14 +193,16 @@ def hangman():
 
         if guess not in word_to_guess:
             attempts += 1
-            print("\033[91mIncorrect guess! Attempts left:", max_attempts - attempts)
+            print("\033[91mIncorrect guess! Attempts left:", max_attempts - attempts, "\033[0m")
+        else:
+            print("\033[92mCorrect guess! Keep going.\033[0m")
         
         if attempts == max_attempts:
-            print("\033[91mSorry, you have ran out of attempts. The word was:", word_to_guess)
+            print("\033[91mSorry, you have ran out of attempts. The word was:", word_to_guess, "\033[0m")
             break
         
         if all(letter in guessed_letters for letter in word_to_guess):
-            print("\033[92mCongratulations! You guessed the word:", word_to_guess)
+            print("\033[92mCongratulations! You guessed the word:", word_to_guess, "\033[0m")
             break
     
     while True:
@@ -206,9 +212,9 @@ def hangman():
             break
         elif play_again.lower() == "no":
             print("Thank you for playing Hangman!")
-            break
+            sys.exit()
         else:
-            print("Invalid input. Please enter 'yes' or 'no'.")
+            print("\033[91mInvalid input. Please enter 'yes' or 'no'.\033[0m")
         
 if __name__ == "__main__":
     hangman()
