@@ -21,7 +21,7 @@ def choose_word(difficulty):
         ValueError: If the entry is not 'easy' or 'hard' the user will be prompted to retype.
     """
     if difficulty == 'easy':
-        with open('easy_words.txt', 'r',) as file:
+        with open('easy_words.txt', 'r') as file:
             words = file.read().splitlines()
     elif difficulty == 'hard':
         with open('hard_words.txt', 'r') as file:
@@ -33,7 +33,8 @@ def choose_word(difficulty):
 
 def display_word(word, guessed_letters):
     """
-    Generate a string that represents the display of the word with the correctly guessed letters revealed, and the unguessed letter hidden.
+    Generate a string that represents the display of the word with the correctly guessed letters revealed
+    and the unguessed letter hidden.
 
     Args:
         word (str): The word that needs to be guessed.
@@ -85,22 +86,22 @@ def draw_hangman(attempts):
         """
         +---+
         0   |
-       /|\  |
+       /|\\ |
             |
            ===
         """,
         """
         +---+
         0   |
-       /|\  |
+       /|\\ |
        /    |
            ===
         """,
         """
         +---+
         0   |
-       /|\  |
-       / \  |
+       /|\\ |
+       / \\ |
            ===
         """
     ]
@@ -126,7 +127,7 @@ def hangman():
         player_choice = input("Enter '1' for Player vs Player mode, or '2' for Player vs Computer mode: ")
 
         if player_choice == '1':
-            word_to_guess = input("Player 1, please enter the word to guess: ")
+            word_to_guess = input("Player 1, please enter the word to guess: ").lower()
             if not validate_word(word_to_guess):
                 print("Invalid word! Please enter only letters.")
                 continue
@@ -136,7 +137,10 @@ def hangman():
                 difficulty = input("Pick your difficulty level ('easy' or 'hard'): ")
                 if validate_difficulty(difficulty):
                     word_to_guess = choose_word(difficulty)
-                break
+                    break
+                else:
+                    print("Invalid difficulty level. Please choose 'easy' or 'hard'.")
+            break
         else:
             print("Invalid choice. Please enter '1' or '2'.")
             
@@ -168,7 +172,7 @@ def hangman():
         guessed_letters.append(guess)
 
         if guess not in word_to_guess:
-            attempts =+ 1
+            attempts += 1
             print("Incorrect guess! Attempts left:", max_attempts - attempts)
         
         if attempts == max_attempts:
@@ -176,10 +180,11 @@ def hangman():
             break
         
         if all(letter in guessed_letters for letter in word_to_guess):
-            print("Congratulations! You guessed the word:" word_to_guess)
+            print("Congratulations! You guessed the word:", word_to_guess)
             break
         
-if __name__ == "__main__"
-    hangman()    
+if __name__ == "__main__":
+    hangman()
+    
         
 
