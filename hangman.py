@@ -107,5 +107,17 @@ def draw_hangman(attempts):
 
     return hangman_graphics[attempts - 1] if attempts > 0 else ""
 
+def hangman():
+    print("Welcome to Hangman!")
 
+    while True:
+        player_choice = input("Enter '1' for Player vs Player mode, or '2' for Player vs Computer mode: ")
+
+        if player_choice == '1':
+            word_to_guess = input("Player 1, please enter the word to guess: ")
+            if not validate_word(word_to_guess):
+                print("Invalid word! Please enter only letters.")
+                continue
+            break
+        
 
