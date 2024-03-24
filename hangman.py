@@ -145,6 +145,9 @@ def hangman():
     max_attempts = 7
     attempts = 0
 
+    """
+
+    """
     while True:
         print(draw_hangman(attempts))
         print("\nWord:", display_word(word_to_guess, guessed_letters))
@@ -160,6 +163,10 @@ def hangman():
             attempts =+ 1
             print("Incorrect guess! Attempts left:", max_attempts - attempts)
         
-
+        if attempts == max_attempts:
+            print("Sorry, you have ran out of attempts. The word was:", word_to_guess)
+            break
+        
+        
         
 
