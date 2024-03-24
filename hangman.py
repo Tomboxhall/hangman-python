@@ -128,6 +128,9 @@ def hangman():
         else:
             print("Invalid choice. Please enter '1' or '2'.")
             
+    guessed_letters = []
+    max_attempts = 7
+    attempts = 0
     
         
 
