@@ -171,5 +171,7 @@ def hangman():
             print("Congratulations! You guessed the word:" word_to_guess)
             break
         
+if __name__ == "__main__"
+    hangman()    
         
 
