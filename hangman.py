@@ -182,6 +182,12 @@ def hangman():
         if all(letter in guessed_letters for letter in word_to_guess):
             print("Congratulations! You guessed the word:", word_to_guess)
             break
+    
+    play_again = input("Do you want to play again? (yes/no): ")
+    if play_again.lower() == "yes":
+        hangman()
+    else:
+        print("Thank you for playing Hangman!")
         
 if __name__ == "__main__":
     hangman()
